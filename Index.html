@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdulkareem Umar Faruq | Cybersecurity Portfolio</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#0a0f1c;
+color:white;
+line-height:1.6;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+background:#050812;
+position:sticky;
+top:0;
+}
+
+header h1{
+color:#00ffcc;
+}
+
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:white;
+transition:.3s;
+}
+
+nav a:hover{
+color:#00ffcc;
+}
+
+.hero{
+height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+flex-direction:column;
+padding:20px;
+}
+
+.hero h2{
+font-size:40px;
+}
+
+.typing{
+color:#00ffcc;
+font-size:24px;
+margin-top:10px;
+}
+
+button{
+margin-top:20px;
+padding:12px 30px;
+border:none;
+background:#00ffcc;
+color:black;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+section{
+padding:80px 10%;
+}
+
+.section-title{
+text-align:center;
+font-size:30px;
+margin-bottom:40px;
+color:#00ffcc;
+}
+
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.skill{
+background:#11182b;
+padding:20px;
+border-radius:10px;
+text-align:center;
+transition:.3s;
+}
+
+.skill:hover{
+transform:translateY(-5px);
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.project{
+background:#11182b;
+padding:25px;
+border-radius:10px;
+transition:.3s;
+}
+
+.project:hover{
+transform:scale(1.05);
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:#050812;
+margin-top:40px;
+}
+
+@media(max-width:768px){
+
+.hero h2{
+font-size:30px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>Faruq</h1>
+
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h2>Hello, I'm Abdulkareem Umar Faruq</h2>
+
+<div class="typing" id="typing"></div>
+
+<button onclick="scrollToSection()">View My Work</button>
+
+</section>
+
+<section id="about">
+
+<h2 class="section-title">About Me</h2>
+
+<p>
+I am a cybersecurity student passionate about protecting systems and networks from cyber threats.
+I recently completed the Foundations of Cybersecurity course and I am currently studying Python for
+security automation. I enjoy building tools that help identify vulnerabilities and improve system security.
+</p>
+
+</section>
+
+<section id="skills">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skills">
+
+<div class="skill">Cybersecurity Fundamentals</div>
+<div class="skill">Python Programming</div>
+<div class="skill">Web Development</div>
+<div class="skill">HTML / CSS / JavaScript</div>
+<div class="skill">Security Analysis</div>
+<div class="skill">Network Basics</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="projects">
+
+<div class="project">
+<h3>Password Strength Checker</h3>
+<p>A Python tool that evaluates the strength of passwords and provides recommendations to improve security.</p>
+</div>
+
+<div class="project">
+<h3>Security Header Scanner</h3>
+<p>A cybersecurity tool that scans websites and identifies missing HTTP security headers.</p>
+</div>
+
+<div class="project">
+<h3>More Projects Coming</h3>
+<p>I am currently working on more cybersecurity tools and automation scripts.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<p>Email: your-email@email.com</p>
+
+<p>GitHub: github.com/yourusername</p>
+
+</section>
+
+<footer>
+
+<p>© 2026 Abdulkareem Umar Faruq | Cybersecurity Portfolio</p>
+
+</footer>
+
+<script>
+
+const text = [
+"Cybersecurity Student",
+"Python Security Learner",
+"Future Security Analyst",
+"Web Security Enthusiast"
+]
+
+let count = 0
+let index = 0
+let currentText = ""
+let letter = ""
+
+function type(){
+
+if(count === text.length){
+count = 0
+}
+
+currentText = text[count]
+letter = currentText.slice(0, ++index)
+
+document.getElementById("typing").textContent = letter
+
+if(letter.length === currentText.length){
+count++
+index = 0
+}
+
+setTimeout(type,100)
+
+}
+
+type()
+
+function scrollToSection(){
+
+document.getElementById("projects").scrollIntoView({
+behavior:"smooth"
+})
+
+}
+
+</script>
+
+</body>
+</html>
+
